@@ -65,11 +65,11 @@ label {
 
 .submit-btn {
     width: 100%;
-    padding: 15px; /* Increased padding for a larger button */
+    padding: 15px; 
     background-color: #267da5;
     border: none;
     color: white;
-    font-size: 20px; /* Increased font size for the button text */
+    font-size: 20px; 
     cursor: pointer;
     border-radius: 5px;
     margin-top: 20px;
@@ -83,7 +83,7 @@ label {
 }
 
 .result-box {
-    font-size: 20px; /* Increased font size for result content */
+    font-size: 20px; 
     color: #333;
     padding: 20px;
     border: 1px solid #0268d4;
@@ -92,11 +92,11 @@ label {
     margin-bottom: 20px;
     box-shadow: 0 5px 15px rgba(0, 123, 255, 0.2);
     text-align: center;
-    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s; 
 }
 
 .result-box h2 {
-    font-size: 24px; /* Increased font size for headings */
+    font-size: 24px; 
     color: #267da5;
     margin-bottom: 10px;
     text-align: center;
@@ -104,21 +104,21 @@ label {
 }
 
 .result-box p {
-    font-size: 18px; /* Increased font size for paragraph text */
+    font-size: 18px; 
     color: #555;
     font-weight: bold;
     text-align: center;
 }
 
 .result-box:hover {
-    background-color: rgba(230, 245, 255, 0.9); /* Slight change in background color on hover */
-    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3); /* Increased shadow for a floating effect */
-    transform: translateY(-5px); /* Slight upward movement on hover */
+    background-color: rgba(230, 245, 255, 0.9); 
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3); 
+    transform: translateY(-5px); 
 }
 
 .back-btn {
     display: inline-block;
-    padding: 12px 24px; /* Increased padding for a larger button */
+    padding: 12px 24px; 
     background-color: #0c61d1;
     color: white;
     text-decoration: none;
@@ -133,20 +133,19 @@ label {
     transform: scale(1.05);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .container {
-        width: 90%; /* Adjust width for smaller screens */
+        width: 90%;
         padding: 20px;
     }
 
     .result-box {
-        font-size: 18px; /* Maintain larger font size on smaller screens */
+        font-size: 18px; 
         padding: 15px;
     }
 
     .submit-btn, .back-btn {
-        font-size: 18px; /* Maintain larger button font size */
+        font-size: 18px; 
         padding: 12px;
     }
 }

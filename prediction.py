@@ -8,7 +8,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Dictionaries with risk class information
 risk_class_descriptions = {
     1: "A situation where there is a reasonable chance that a product will cause serious health problems or death.",
     2: "A situation where a product may cause a temporary or reversible health problem or where there is a slight chance that it will cause serious health problems or death.",
@@ -26,20 +25,17 @@ df = pd.read_excel(r'C:\Users\sriba\Desktop\cts_git\final_cts.xlsx')
 # Data Preprocessing
 df['risk_class'] = df['risk_class'].fillna(df['risk_class'].mode()[0])
 
-# Drop columns that are not needed for the model
 df = df.drop(['id', 'date_posted', 'date_terminated', 'uid', 'device_id', 'manufacturer_id', 
               'action_classification', 'determined_cause', 'type', 'status'], axis=1, errors='ignore')
 
 categorical_cols = df.select_dtypes(include=['object']).columns
 
-# Label encoding for categorical features
 encoders = {col: LabelEncoder() for col in categorical_cols}
 for col in categorical_cols:
     df[col] = df[col].fillna('Unknown')
     encoders[col].fit(df[col].unique())
     df[col] = encoders[col].transform(df[col])
 
-# Handle missing values using the most frequent value
 imputer = SimpleImputer(strategy='most_frequent')
 
 X = df.drop('risk_class', axis=1)
@@ -47,7 +43,6 @@ y = df['risk_class']
 
 imputer.fit(X)
 
-# Split data into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 rf_classifier = RandomForestClassifier(n_estimators=100, random_state=42)
@@ -90,5 +85,6 @@ def predict_new_data(new_data, confidence_threshold=0.6):
 
         return predicted_class, description, suggestion
 
-    except Exception as e:
-        return f"Error in prediction: {str(e)}", "", ""
+    except Exception as ex:
+        return f"Error in prediction: {str(ex)}", "", ""
+ 
